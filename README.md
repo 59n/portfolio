@@ -47,6 +47,27 @@ To create a production build:
 npm run build
 ```
 
+## Deployment
+
+### Netlify (Recommended)
+
+1. Fork or clone this repository
+2. Log in to your Netlify account
+3. Click "New site from Git"
+4. Choose your repository
+5. Deploy settings will be automatically configured by `netlify.toml`
+6. Click "Deploy site"
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/59n/portfolio)
+
+### Alternative Deployment Options
+
+You can also deploy on:
+- Vercel
+- GitHub Pages (requires additional configuration)
+- Railway
+- DigitalOcean App Platform
+
 ## Author
 
 - 59n (59n@panel.mom)
