@@ -135,18 +135,27 @@ const ContentBox = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // Make sure to include the form-name in the submitted data
+    formData.append('form-name', 'contact');
+
     // Submit the form data to Netlify
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
     })
-    .then(() => {
-      setFormStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+    .then((response) => {
+      if (response.ok) {
+        console.log('Form submission successful!');
+        setFormStatus('success');
+        setFormData({ name: '', email: '', message: '' });
 
-      // Reset form status after 3 seconds
-      setTimeout(() => setFormStatus('idle'), 3000);
+        // Reset form status after 3 seconds
+        setTimeout(() => setFormStatus('idle'), 3000);
+      } else {
+        console.error('Form submission failed:', response.statusText);
+        setFormStatus('error');
+      }
     })
     .catch((error) => {
       console.error('Error submitting form:', error);
@@ -249,6 +258,7 @@ const ContentBox = () => {
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              action="/static-rebuild/?success=true"
               onSubmit={handleSubmit}
               className="w-full space-y-4"
             >
