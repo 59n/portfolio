@@ -15,7 +15,8 @@
     "dev": "next dev -H 0.0.0.0 --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "./netlify-deploy.sh"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
