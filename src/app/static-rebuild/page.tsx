@@ -408,7 +408,7 @@ const styles = `
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(1px);
-    mix-blend-mode: difference;
+    /* Removed mix-blend-mode: difference; */
   }
 
   a:hover ~ .cursor,
@@ -480,6 +480,7 @@ const styles = `
   .light-theme .cursor {
     border: 2px solid rgba(51, 51, 51, 0.8);
     background: rgba(51, 51, 51, 0.15);
+    /* No mix-blend-mode here either */
   }
 `;
 
