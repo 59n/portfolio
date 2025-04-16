@@ -18,7 +18,7 @@ echo "Building Next.js application..."
 npm run build
 
 # Verify the build directory exists
-if [ -d "build" ]; then
+if [ -d ".next" ]; then
   echo "Build directory exists. Ready for deployment."
 else
   echo "Error: Build directory not found. Check your Next.js configuration."

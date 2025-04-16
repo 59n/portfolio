@@ -3,7 +3,7 @@
 
 [build]
   command = "npm run build"
-  publish = "build"
+  publish = ".next"
 
 [build.environment]
   #NEXT_USE_NETLIFY_EDGE = "true"
@@ -11,9 +11,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    # If you have a custom build directory, specify it here
-    build_dir = "build"
 
 [[headers]]
   for = "/*"

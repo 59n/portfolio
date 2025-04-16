@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const config = {
   /* config options here */
-  distDir: process.env.NODE_ENV === "production" ? "build" : ".next",
+  // Using .next for both development and production to be compatible with Netlify
+  distDir: ".next",
   devIndicators: false,
   images: {
     unoptimized: true,

@@ -81,10 +81,10 @@ netlify deploy --prod
 4. Choose your repository
 5. Make sure the following settings are configured:
    - Build command: `npm run build`
-   - Publish directory: `build`
+   - Publish directory: `.next`
 6. Click "Deploy site"
 
-**Important Note:** The `netlify.toml` file in this repository is already configured to use the correct build directory (`build` instead of `.next`). This is essential for successful deployment with Next.js 15.
+**Important Note:** The `netlify.toml` file in this repository is already configured to use the correct build directory (`.next`) for compatibility with the Netlify Next.js plugin.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/59n/portfolio)
 
