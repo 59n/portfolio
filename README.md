@@ -96,9 +96,6 @@ You can also deploy on:
 - Railway
 - DigitalOcean App Platform
 
-## Author
-
-- 59n (59n@panel.mom)
 
 ## License
 
