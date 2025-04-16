@@ -6,6 +6,7 @@ import { SiOsu, SiWhatsapp, SiTelegram } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 import { ChevronLeft, ChevronRight, Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Skill Bar Component
 interface SkillBarProps {
@@ -56,13 +57,14 @@ const ProfileHeader = () => {
 
   return (
     <div className="flex flex-col items-center mb-8">
-      <div className="mb-4 rounded-full overflow-hidden w-24 h-24 border border-white/20">
-        <img
+      <div className="mb-4 rounded-full overflow-hidden w-24 h-24 border border-white/20 relative">
+        <Image
           src="/images/avatar.jpg"
           alt="jack avatar"
           width={96}
           height={96}
           className="w-full h-full object-cover"
+          priority
         />
       </div>
       <h1 className="text-white text-2xl font-bold mb-2">
@@ -137,7 +139,7 @@ const ContentBox = () => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as any).toString(),
+      body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
     })
     .then(() => {
       setFormStatus('success');
